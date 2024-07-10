@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_fancy_tree_view/flutter_fancy_tree_view.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tractian/common/colors.dart';
-import 'package:tractian/features/core_tree/helpers/tree_helper.dart';
 import 'package:tractian/features/core_tree/tree_node.dart';
 import 'package:tractian/features/home/controllers/home_page_controller.dart';
 

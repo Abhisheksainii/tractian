@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_fancy_tree_view/flutter_fancy_tree_view.dart';
@@ -57,7 +55,6 @@ class HomePageController extends ChangeNotifier {
       Rx.combineLatest4(_searchSubject, _treeControllerSubject,
           _criticalSensorStatusFilterSubject, _energySensorFilterSubject,
           (query, controller, isAlertStatus, enableEnergySensor) {
-        print("filtering: energy:$enableEnergySensor alert:$isAlertStatus");
         return TreeController<MyNode>(
           roots: searchTreeByFilter(
               searchTree(roots, query), isAlertStatus, enableEnergySensor),
@@ -180,8 +177,6 @@ class HomePageController extends ChangeNotifier {
           children: childAssetMap[nodeId],
           sensorType: node.sensorType,
           status: node.sensorStatus);
-      print(
-          "node: ${nodeAssetMap[nodeId]?.sensorStatus} ${nodeAssetMap[nodeId]?.sensorType}");
     }
     for (var asset in assets) {
       if (asset['parentId'] == null && asset['locationId'] != null) {
